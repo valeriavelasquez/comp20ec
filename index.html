@@ -1,0 +1,59 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>COMP 20 Extra Credit</title>
+    <style>
+    h1{
+        font-family: iceberg;
+    }
+    </style>
+
+</head>
+<body>
+    <h1>Right to left, left to righ...forever</h1>
+    <br>
+    <form>
+        <input name="text1" id ="text1" type ="text">
+        <input id = "arrow" type ="button" value = "==>" onclick = "clickArrow()" 
+               style="border-radius: 20px; color: cadetblue">
+        <input name="text2" id= "text2" type = "text">
+    </form>
+  <script language = "javascript">
+      function clickArrow()
+      {
+          var x;
+          var direction = document.getElementById("arrow").value;
+          var left_or_right;
+          if (direction == "==>")
+          {
+            x = document.getElementById("text1").value;
+            left_or_right = true;
+          }
+          else
+          {
+            left_or_right = false;
+            x = document.getElementById("text2").value;
+          }
+          if (x.match(/\S/))
+          {
+              if (left_or_right)
+              {
+                  document.getElementById("text2").value = x;
+                  document.getElementById("arrow").value = "<==";
+                  document.getElementById("text1").value = "";
+              }
+              else
+              {
+                  document.getElementById("text1").value = x;
+                  document.getElementById("arrow").value = "==>";
+                  document.getElementById("text2").value = "";
+
+              }
+          }
+      }
+  </script>
+</body>
+</html>
